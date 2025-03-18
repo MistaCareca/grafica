@@ -26,7 +26,7 @@ export default function Numeros() {
   }, []);
 
   return (
-    <section id="numeros" className="relative py-16 bg-gray-900">
+    <section id="numeros" className="relative py-16 bg-white">
       {/* Fundo curvado */}
       <div
         className="absolute inset-0 bg-blue-800"
