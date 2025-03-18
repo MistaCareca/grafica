@@ -15,7 +15,6 @@ export default function Header() {
   useEffect(() => {
     setIsMounted(true);
 
-    // Prevenir rolagem quando o menu estiver aberto
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -37,73 +36,65 @@ export default function Header() {
 
   return (
     <>
-      {/* Header principal */}
       {!isMenuOpen && (
-        <header className="bg-blue-300/20 backdrop-blur-md rounded-[50px] fixed w-[90%] max-w-[1013px] left-1/2 transform -translate-x-1/2 mt-4 sm:mt-6 md:mt-[47px] z-20 shadow-md">
-          <div className="flex bg-blue-300/30 rounded-[50px] justify-between items-center py-1 px-2 sm:px-4 md:px-[228px] gap-2 sm:gap-4 md:gap-[32px]">
-            <div>
+        
+<header className="bg-blue-300/20 backdrop-blur-md rounded-[50px] fixed w-[90%] max-w-[1013px] left-1/2 transform -translate-x-1/2 mt-4 sm:mt-6 md:mt-[47px] z-20 shadow-md">
+          <div className="bg-blue-300/30 rounded-[50px] flex items-center justify-between py-2 px-4 sm:px-6">
+            <div className="flex-shrink-0">
               <Image
                 src={Logo}
                 alt="Logo da Marca"
-                className="cursor-pointer"
-                width={70}
-                height={40}
-                sizes="(max-width: 640px) 60px, 80px"
-                suppressHydrationWarning
+                width={150} // Aumentado
+                height={75} // Aumentado
+                sizes="(max-width: 640px) 120px, 150px"
+                className="object-contain"
               />
             </div>
 
-            {/* Links de navegação para telas maiores */}
-            <nav className="hidden sm:flex gap-2 md:gap-[32px]">
-              <a
-                href="#servicos"
-                className="text-white text-xs sm:text-sm opacity-70 hover:text-blue-500 hover:opacity-100"
-              >
+            {/* Navegação (textos horizontais) */}
+            <nav className="hidden sm:flex items-center space-x-8 flex-nowrap">
+              <a href="#servicos" className="text-white text-sm opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors">
                 Nossos Serviços
               </a>
-              <a
-                href="#numeros"
-                className="text-white text-xs sm:text-sm opacity-70 hover:text-blue-500 hover:opacity-100"
-              >
+              <a href="#numeros" className="text-white text-sm opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors">
                 Nossos Números
               </a>
-              <a
-                href="#contatos"
-                className="text-white text-xs sm:text-sm opacity-70 hover:text-blue-500 hover:opacity-100"
-              >
+              <a href="#contatos" className="text-white text-sm opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors">
                 Fale Conosco
               </a>
             </nav>
 
-            {/* Ícones sociais para telas maiores */}
-            <div className="hidden sm:flex gap-2 sm:gap-[32px]">
+            {/* Redes Sociais (imagens maiores) */}
+            <div className="hidden sm:flex items-center space-x-4">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src={InstagramIcon}
-                  alt="Instagram"
-                  width={20}
-                  height={20}
-                  sizes="(max-width: 640px) 20px, 24px"
-                  suppressHydrationWarning
-                />
+                <div className="rounded-full p-1.5">
+                  <Image
+                    src={InstagramIcon}
+                    alt="Instagram"
+                    width={28} // Aumentado
+                    height={28} // Aumentado
+                    className="object-contain"
+                  />
+                </div>
               </a>
               <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src={WhatsAppIcon}
-                  alt="WhatsApp"
-                  width={20}
-                  height={20}
-                  sizes="(max-width: 640px) 20px, 24px"
-                  suppressHydrationWarning
-                />
+                <div className="rounded-full p-1.5">
+                  <Image
+                    src={WhatsAppIcon}
+                    alt="WhatsApp"
+                    width={28} // Aumentado
+                    height={28} // Aumentado
+                    className="object-contain"
+                  />
+                </div>
               </a>
             </div>
 
-            {/* Botão do menu para telas pequenas */}
-            <div className="sm:hidden relative">
+            {/* Menu Hamburguer (Mobile) */}
+            <div className="sm:hidden">
               <button
                 onClick={toggleMenu}
-                className="relative z-50 flex items-center justify-center text-white border border-orange-500 rounded-md p-1"
+                className="text-white p-1 rounded-full hover:bg-blue-300 transition-colors"
                 aria-label="Abrir menu"
               >
                 <Menu size={24} />
@@ -113,66 +104,50 @@ export default function Header() {
         </header>
       )}
 
-      {/* Overlay para o menu mobile */}
       {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
-          onClick={toggleMenu}
-        />
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30" onClick={toggleMenu} />
       )}
 
-      {/* Menu lateral deslizante */}
       {isMenuOpen && (
-        <div
-          className="fixed top-0 right-0 w-[200px] bg-gray-900 shadow-xl z-40 transition-transform duration-300 ease-in-out translate-x-0 sm:hidden rounded-l-[20px]"
-        >
+        <div className="fixed top-0 right-0 w-[200px] bg-blue-200 shadow-xl z-40 transition-transform duration-300 ease-in-out translate-x-0 sm:hidden rounded-l-[20px]">
           <div className="flex flex-col">
-            <div className="bg-blue-300 rounded-tl-[20px] flex items-center justify-between p-2">
+            <div className="flex items-center justify-between p-2">
               <div className="flex items-center">
                 <Image
                   src={Logo}
                   alt="Logo da Marca"
-                  className="cursor-pointer"
-                  width={90}
-                  height={45}
-                  suppressHydrationWarning
+                  width={120} // Aumentado no menu mobile
+                  height={60} // Aumentado proporcionalmente
+                  className="object-contain"
                 />
               </div>
-              <button
-                onClick={toggleMenu}
-                className="text-white hover:text-blue-500"
-                aria-label="Fechar menu"
-              >
+              <button onClick={toggleMenu} className="text-white hover:text-blue-500">
                 <X size={24} />
               </button>
             </div>
-
-            {/* Conteúdo do menu */}
-            <div>
-              <nav className="flex flex-col">
-                <a
-                  href="#servicos"
-                  className="text-white text-lg font-medium py-2 px-4 text-center hover:bg-blue-500/20 hover:text-blue-500 hover:opacity-100 transition-all border-b border-white"
-                  onClick={toggleMenu}
-                >
-                  Nossos Serviços
-                </a>
-                <a
-                  href="#numeros"
-                  className="text-white text-lg font-medium py-2 px-4 text-center hover:bg-blue-500/20 hover:text-blue-500 hover:opacity-100 transition-all border-b border-white"
-                  onClick={toggleMenu}
-                >
-                  Nossos Números
-                </a>
-                <a
-                  href="#contatos"
-                  className="text-white text-lg font-medium py-2 px-4 text-center hover:bg-blue-500/20 hover:text-blue-500 hover:opacity-100 transition-all"
-                  onClick={toggleMenu}
-                >
-                  Fale Conosco
-                </a>
-              </nav>
-            </div>
+            <nav className="flex flex-col">
+              <a
+                href="#servicos"
+                className="text-white text-lg font-medium py-2 px-4 text-center hover:bg-blue-300/50 transition-colors"
+                onClick={toggleMenu}
+              >
+                Nossos Serviços
+              </a>
+              <a
+                href="#numeros"
+                className="text-white text-lg font-medium py-2 px-4 text-center hover:bg-blue-300/50 transition-colors"
+                onClick={toggleMenu}
+              >
+                Nossos Números
+              </a>
+              <a
+                href="#contatos"
+                className="text-white text-lg font-medium py-2 px-4 text-center hover:bg-blue-300/50 transition-colors"
+                onClick={toggleMenu}
+              >
+                Fale Conosco
+              </a>
+            </nav>
           </div>
         </div>
       )}

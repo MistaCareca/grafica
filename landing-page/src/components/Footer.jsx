@@ -7,7 +7,7 @@ import Logo from '../../public/logo.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-700 text-white py-8">
+    <footer className="bg-blue-800 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         {/* Logo */}
         <div className="mb-6">
@@ -21,10 +21,12 @@ export default function Footer() {
           />
         </div>
 
-        {/* Informações */}
-        <div className="mb-6 text-center">
+        <div className="mb-2 text-center">
           <p className="text-sm md:text-base opacity-80">
-            Rua Rio Jatobá, 10, José e Maria - Petrolina/PE
+            Rua Rio Jatobá, 10
+          </p>
+          <p className='text-sm md:text-base opacity-80'>
+            José e Maria - Petrolina/PE
           </p>
           <p className="text-sm md:text-base opacity-80">56.320-105</p>
         </div>
@@ -35,8 +37,8 @@ export default function Footer() {
             <Image
               src={InstagramIcon}
               alt="Instagram"
-              width={24}
-              height={24}
+              width={30}
+              height={30}
               className="hover:opacity-80 transition-opacity"
             />
           </a>
@@ -44,8 +46,8 @@ export default function Footer() {
             <Image
               src={WhatsAppIcon}
               alt="WhatsApp"
-              width={24}
-              height={24}
+              width={30}
+              height={30}
               className="hover:opacity-80 transition-opacity"
             />
           </a>
