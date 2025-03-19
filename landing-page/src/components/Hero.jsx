@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { SlArrowLeft , SlArrowRight  } from 'react-icons/sl';
 import slide1 from '../../public/slide1.jpg';
 import slide2 from '../../public/slide2.jpg';
 import slide3 from '../../public/slide3.jpg';
@@ -65,7 +65,6 @@ export default function Hero() {
             }}
           >
             <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-              {/* Removido o texto (h1 e p) */}
             </div>
             <div className="absolute bottom-4 left-0 right-0 flex justify-center py-2">
               {slides.map((slide, slideIndex) => (
@@ -83,13 +82,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Setas sempre visíveis com opacidade ajustável */}
         <div className="absolute top-[50%] -translate-y-1/2 left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-          <BsChevronCompactLeft onClick={prevSlide} size={30} />
+          <SlArrowLeft onClick={prevSlide} size={30} />
         </div>
 
         <div className="absolute top-[50%] -translate-y-1/2 right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-          <BsChevronCompactRight onClick={nextSlide} size={30} />
+          <SlArrowRight onClick={nextSlide} size={30} />
         </div>
       </div>
     </div>

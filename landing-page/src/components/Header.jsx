@@ -1,11 +1,10 @@
-// components/Header.jsx
 'use client'
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import InstagramIcon from '../../public/instagram.png';
-import WhatsAppIcon from '../../public/whatsapp.png';
-import Logo from '../../public/logo.png';
+import InstagramIcon from '../../public/instagram.svg';
+import WhatsAppIcon from '../../public/whatsapp.svg';
+import Logo from '../../public/logo.svg';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
@@ -44,14 +43,13 @@ export default function Header() {
               <Image
                 src={Logo}
                 alt="Logo da Marca"
-                width={150} // Aumentado
-                height={75} // Aumentado
+                width={150} 
+                height={75} 
                 sizes="(max-width: 640px) 120px, 150px"
                 className="object-contain"
               />
             </div>
 
-            {/* Navegação (textos horizontais) */}
             <nav className="hidden sm:flex items-center space-x-8 flex-nowrap">
               <a href="#servicos" className="text-white text-sm opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors">
                 Nossos Serviços
@@ -64,15 +62,14 @@ export default function Header() {
               </a>
             </nav>
 
-            {/* Redes Sociais (imagens maiores) */}
             <div className="hidden sm:flex items-center space-x-4">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <div className="rounded-full p-1.5">
                   <Image
                     src={InstagramIcon}
                     alt="Instagram"
-                    width={28} // Aumentado
-                    height={28} // Aumentado
+                    width={28} 
+                    height={28} 
                     className="object-contain"
                   />
                 </div>
@@ -82,15 +79,14 @@ export default function Header() {
                   <Image
                     src={WhatsAppIcon}
                     alt="WhatsApp"
-                    width={28} // Aumentado
-                    height={28} // Aumentado
+                    width={28} 
+                    height={28}
                     className="object-contain"
                   />
                 </div>
               </a>
             </div>
 
-            {/* Menu Hamburguer (Mobile) */}
             <div className="sm:hidden">
               <button
                 onClick={toggleMenu}
@@ -116,8 +112,8 @@ export default function Header() {
                 <Image
                   src={Logo}
                   alt="Logo da Marca"
-                  width={120} // Aumentado no menu mobile
-                  height={60} // Aumentado proporcionalmente
+                  width={120} 
+                  height={60}
                   className="object-contain"
                 />
               </div>

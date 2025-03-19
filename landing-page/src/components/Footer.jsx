@@ -1,15 +1,13 @@
-// components/Footer.jsx
 import React from 'react';
 import Image from 'next/image';
-import InstagramIcon from '../../public/instagram.png';
-import WhatsAppIcon from '../../public/whatsapp.png';
-import Logo from '../../public/logo.png';
+import InstagramIcon from '../../public/instagram.svg';
+import WhatsAppIcon from '../../public/whatsapp.svg';
+import Logo from '../../public/logo.svg';
 
 export default function Footer() {
   return (
     <footer className="bg-blue-800 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        {/* Logo */}
         <div className="mb-6">
           <Image
             src={Logo}
@@ -31,7 +29,6 @@ export default function Footer() {
           <p className="text-sm md:text-base opacity-80">56.320-105</p>
         </div>
 
-        {/* Redes Sociais */}
         <div className="flex justify-center gap-6">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <Image
