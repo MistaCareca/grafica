@@ -23,7 +23,7 @@ export default function Footer() {
           <p className="text-sm md:text-base opacity-80">
             Rua Rio Jatobá, 10
           </p>
-          <p className='text-sm md:text-base opacity-80'>
+          <p className="text-sm md:text-base opacity-80">
             José e Maria - Petrolina/PE
           </p>
           <p className="text-sm md:text-base opacity-80">56.320-105</p>

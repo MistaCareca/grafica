@@ -2,14 +2,14 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Card from './Card';
-import slide1 from '../../public/slide1.jpg';
-import slide2 from '../../public/slide2.jpg';
+import slide1 from '../../public/slide1.svg';
+import slide2 from '../../public/slide2.svg';
 import Swiper from 'swiper';
 import 'swiper/css';
 
 export default function Servicos() {
   const swiperRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(1); 
+  const [currentSlide, setCurrentSlide] = useState(1); // Corrigido de 0 para 1
 
   const services = [
     {
@@ -21,11 +21,6 @@ export default function Servicos() {
       imgSrc: slide2.src,
       title: 'TOTENS',
       description: 'Impacte de longe com totens sob medida, ideais para sinalização ou divulgação, unindo design moderno e resistência.',
-    },
-    {
-      imgSrc: slide1.src,
-      title: 'IMPRESSÕES',
-      description: 'Qualidade impecável em cada detalhe: panfletos, cartões e banners que transformam suas ideias em materiais de alto nível.',
     },
     {
       imgSrc: slide2.src,
@@ -41,8 +36,8 @@ export default function Servicos() {
 
   const extendedServices = [
     services[services.length - 1],
-    ...services, 
-    services[0], 
+    ...services,
+    services[0],
   ];
 
   useEffect(() => {
@@ -51,20 +46,20 @@ export default function Servicos() {
         slidesPerView: 1,
         spaceBetween: 16,
         centeredSlides: true,
-        loop: false, 
-        initialSlide: 1, 
-        simulateTouch: true, 
-        touchRatio: 1, 
-        grabCursor: true, 
+        loop: false,
+        initialSlide: 1,
+        simulateTouch: true,
+        touchRatio: 1,
+        grabCursor: true,
         on: {
           slideChange: () => {
             if (!swiperRef.current) return;
 
-            const totalSlides = services.length; 
+            const totalSlides = services.length;
             const activeIndex = swiperRef.current.activeIndex;
 
             if (activeIndex === extendedServices.length - 1) {
-              swiperRef.current.slideTo(1, 0); 
+              swiperRef.current.slideTo(1, 0);
               setCurrentSlide(1);
             } else if (activeIndex === 0) {
               swiperRef.current.slideTo(totalSlides, 0);
@@ -89,8 +84,8 @@ export default function Servicos() {
     }
   }, []);
 
-  const totalSlides = services.length; 
-  const progressPercentage = (currentSlide / totalSlides) * 100; 
+  const totalSlides = services.length;
+  const progressPercentage = (currentSlide / totalSlides) * 100;
 
   return (
     <section id="servicos" className="py-8 sm:py-16 bg-white">
@@ -120,9 +115,6 @@ export default function Servicos() {
               ))}
             </div>
             <div className="mt-4 text-center">
-              <p className="text-sm text-blue-800 mb-2">
-                Diapositivo {currentSlide}
-              </p>
               <div className="w-64 h-2 mx-auto bg-gray-200 rounded-full">
                 <div
                   className="h-2 bg-blue-800 rounded-full transition-all duration-300"
@@ -133,7 +125,7 @@ export default function Servicos() {
           </div>
         </div>
 
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-6 sm:mt-10">
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 sm:mt-10">
           {services.map((service, index) => (
             <Card
               key={index}
