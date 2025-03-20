@@ -56,3 +56,23 @@ html, body {
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none; 
 }
+
+.swiper-pagination {
+  position: relative;
+  bottom: 0;
+  margin-top: 16px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #bfdbfe;
+  opacity: 0.4;
+  width: 20px;
+  height: 4px;
+  border-radius: 0;
+  margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #1e40af;
+  opacity: 1;
+}
