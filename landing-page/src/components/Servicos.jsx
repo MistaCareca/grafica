@@ -2,33 +2,40 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Card from './Card';
-import slide1 from '../../public/slide1.svg';
-import slide2 from '../../public/slide2.svg';
+import brindes from '../../public/brindes.svg';
+import fachadas from '../../public/Fachadas.svg';
+import impressoes from '../../public/impressoes.svg';
+import Letreiros from '../../public/Letreiros.svg';
+import totens from '../../public/totens.svg';
 import Swiper from 'swiper';
 import 'swiper/css';
 
 export default function Servicos() {
   const swiperRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(1); // Corrigido de 0 para 1
-
+  const [currentSlide, setCurrentSlide] = useState(1); 
   const services = [
     {
-      imgSrc: slide1.src,
+      imgSrc: Letreiros.src,
       title: 'LETREIROS',
       description: 'Chamativos e personalizados, nossos letreiros destacam sua marca com estilo e durabilidade, perfeitos para qualquer tipo de negócio.',
     },
     {
-      imgSrc: slide2.src,
+      imgSrc: totens.src,
       title: 'TOTENS',
       description: 'Impacte de longe com totens sob medida, ideais para sinalização ou divulgação, unindo design moderno e resistência.',
     },
     {
-      imgSrc: slide2.src,
+      imgSrc: fachadas.src,
       title: 'FACHADAS',
       description: 'Deixe sua fachada falar por você! Criamos soluções visuais que atraem olhares e reforçam a identidade do seu espaço.',
     },
     {
-      imgSrc: slide1.src,
+      imgSrc: impressoes.src,
+      title: 'BRINDES',
+      description: 'Brindes personalizados que marcam presença, perfeitos para fidelizar clientes e divulgar sua marca com criatividade.',
+    },
+    {
+      imgSrc: brindes.src,
       title: 'BRINDES',
       description: 'Brindes personalizados que marcam presença, perfeitos para fidelizar clientes e divulgar sua marca com criatividade.',
     },
@@ -103,11 +110,13 @@ export default function Servicos() {
               {extendedServices.map((service, index) => (
                 <div key={index} className="swiper-slide">
                   <div className="bg-blue-100 rounded-2xl h-64 flex flex-col justify-center items-center p-4 mx-4">
-                    <img
-                      src={service.imgSrc}
-                      alt={service.title}
-                      className="w-24 h-24 object-cover rounded-lg mb-4"
-                    />
+                    <div className="flex justify-center">
+                      <img
+                        src={service.imgSrc}
+                        alt={service.title}
+                        className="w-24 h-24 object-contain rounded-lg mb-4"
+                      />
+                    </div>
                     <h3 className="text-lg font-semibold text-blue-800 mb-2">{service.title}</h3>
                     <p className="text-sm text-neutral-600 text-center">{service.description}</p>
                   </div>
@@ -125,7 +134,7 @@ export default function Servicos() {
           </div>
         </div>
 
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 sm:mt-10">
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-6 sm:mt-10">
           {services.map((service, index) => (
             <Card
               key={index}
