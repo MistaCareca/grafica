@@ -114,11 +114,11 @@ export default function Header() {
                   activeSection === 'contatos' ? colorActive : `${colorBase} opacity-70 hover:text-blue-800 hover:opacity-100`
                 }`}> Fale Conosco </a>
             </nav>
-
+              
             <div className="hidden sm:flex items-center space-x-4">
               <a
-                href="https://instagram.com"
-                target="_blank"
+                href="https://instagram.com" // link intagram
+                target="_blank" 
                 rel="noopener noreferrer"
                 onMouseEnter={() => setIsInstagramHovered(true)}
                 onMouseLeave={() => setIsInstagramHovered(false)}
@@ -134,7 +134,7 @@ export default function Header() {
                 </div>
               </a>
               <a
-                href="https://wa.me/123456789"
+                href="https://wa.me/123456789" // link whatsapp
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() => setIsWhatsAppHovered(true)}

@@ -1,4 +1,3 @@
-// src/components/FaleConosco.jsx
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -45,6 +44,8 @@ export default function FaleConosco() {
     setIsModalOpen(false);
   };
 
+  // aqui tu coloca os numeros dos atendentes e as fotos a foto atual é (func.jpg)
+  // e o numero de whatsapp é um exemplo, tu coloca o numero do atendente)
   const attendants = [
     {
       name: 'Eduardo',

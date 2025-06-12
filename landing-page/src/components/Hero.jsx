@@ -4,18 +4,18 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
-import slide1 from '../../public/slide1.svg';
-import slide2 from '../../public/slide2.svg';
-import slide3 from '../../public/slide3.svg';
-import slide4 from '../../public/slide4.svg';
+import slide1 from '../../public/slide1.jpg';
+import slide2 from '../../public/slide2.jpg';
+import slide3 from '../../public/slide3.jpg';
+import slide4 from '../../public/slide4.jpg';
 import Header from './Header';
 
 export default function Hero() {
   const slides = [
-    { url: slide1, text: 'Infográfica: Seu Negócio em Destaque' },
-    { url: slide2, text: 'Transformamos Ideias em Impressões' },
-    { url: slide3, text: 'Comunicação Visual que Atrai Olhares' },
-    { url: slide4, text: 'Da Criação ao Resultado, Somos Infográfica' },
+    { url: slide1},
+    { url: slide2},
+    { url: slide3},
+    { url: slide4},
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +42,7 @@ export default function Hero() {
 
   // Detectar o início do toque
   const onTouchStart = (e) => {
-    setTouchEnd(null); // Resetar o touchEnd
+    setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
