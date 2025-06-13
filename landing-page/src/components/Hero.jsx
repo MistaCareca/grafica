@@ -12,10 +12,10 @@ import Header from './Header';
 
 export default function Hero() {
   const slides = [
-    { url: slide1},
-    { url: slide2},
-    { url: slide3},
-    { url: slide4},
+    { url: slide1, text: 'Infográfica: Seu Negócio em Destaque'.toUpperCase() },
+    { url: slide2, text: 'Transformamos Ideias em Impressões'.toUpperCase() },
+    { url: slide3, text: 'Comunicação visual que atrai olhares'.toUpperCase() },
+    { url: slide4, text: 'Da Criação ao Resultado, Somos Infográfica'.toUpperCase() },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -94,7 +94,7 @@ export default function Hero() {
               priority
             />
             <div className="absolute inset-0 flex items-end justify-start pb-16 sm:pb-20 pl-4 sm:pl-8">
-              <h1 className="text-white text-4xl sm:text-6xl md:text-8xl font-bold text-left px-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]">
+              <h1 className="text-white text-3xl sm:text-5xl md:text-7xl font-bold text-left px-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)]">
                 {slides[currentIndex].text}
               </h1>
             </div>
