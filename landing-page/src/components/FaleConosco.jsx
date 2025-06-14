@@ -50,18 +50,12 @@ export default function FaleConosco() {
     {
       name: 'Eduardo',
       icon: func,
-      whatsappLink: 'https://wa.me/5511999999999',
-    },
-    {
-      name: 'Jordana',
-      icon: func,
-      whatsappLink: 'https://wa.me/5511988888888',
+      whatsappLink: 'https://api.whatsapp.com/send/?phone=5587981615848&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=21&fbclid=PAQ0xDSwK5FyxleHRuA2FlbQIxMAABp2FqdonUfiF7L3rqLv_fWSc2-CUCJHNNUq49UnJFgCM3UryBPNnFbDWrIkue_aem_h97hCoHW-OFbXbbW2qOpvQ',
     },
     {
       name: 'Lucas',
       icon: func,
-      whatsappLink: 'https://wa.me/5511977777777',
-    },
+      whatsappLink: 'https://api.whatsapp.com/send/?phone=5587999043122&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=21&fbclid=PAQ0xDSwK5FyZleHRuA2FlbQIxMAABp5E4qad_gdYQp89OWL61bW4gQTbx_Ll5DbCfCfFArtuvHP2F2MpIeXqcIaM0_aem_Yj2boVBCqKS-E6lGMHbegQ',    },
   ];
 
   return (
